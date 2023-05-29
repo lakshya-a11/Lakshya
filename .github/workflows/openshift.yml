@@ -1,0 +1,22 @@
+ChatGPT: public class MyApp {
+    private static OkHttpClient okHttpClient = new OkHttpClient();
+
+    public static void main(String[] args) {
+        // Make a request to the server
+        Request request = new Request.Builder()
+                .url("http://www.example.com/anime/release")
+                .post(requestBody)
+                .build();
+
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            if (response.isSuccessful()) {
+                // Do something with the response
+            } else {
+                throw new IOException("Unexpected code " + response);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
